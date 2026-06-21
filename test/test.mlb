@@ -1,0 +1,10 @@
+(* Test executable basis: the base58 library (which pulls in the vendored
+ * sml-codec for Sha256) plus the harness and runner. *)
+$(SML_LIB)/basis/basis.mlb
+../src/base58.mlb
+harness.sml
+support.sml
+test_base58.sml
+test_base58check.sml
+entry.sml
+main.sml

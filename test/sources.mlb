@@ -1,10 +1,26 @@
 (* Test executable basis: the base58 library (which pulls in the vendored
- * sml-codec for Sha256) plus the harness and runner. *)
+ * sml-codec for Sha256) plus the harness and runner.
+ *
+ * sml-check is a TEST-only dependency: the library itself is
+ * dependency-free (see ../src/base58.mlb), and only the property-test
+ * section needs it. Include order for the flat Poly/ML `use` model
+ * (tools/polybuild): sml-prng -> sml-test (check.sig references Test.test
+ * in its toTest bridge) -> sml-check -> our own Harness -> the library
+ * under test -> the suites + entry/main shims. *)
 $(SML_LIB)/basis/basis.mlb
+
+../lib/github.com/sjqtentacles/sml-prng/prng.sig
+../lib/github.com/sjqtentacles/sml-prng/prng.sml
+../lib/github.com/sjqtentacles/sml-test/test.sig
+../lib/github.com/sjqtentacles/sml-test/test.sml
+../lib/github.com/sjqtentacles/sml-check/check.sig
+../lib/github.com/sjqtentacles/sml-check/check.sml
+
 ../src/base58.mlb
 harness.sml
 support.sml
 test_base58.sml
 test_base58check.sml
+test_properties.sml
 entry.sml
 main.sml

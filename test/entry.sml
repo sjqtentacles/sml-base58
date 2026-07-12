@@ -4,6 +4,7 @@ fun runAllSuites () =
   ( Harness.reset ()
   ; Base58Tests.run ()
   ; Base58CheckTests.run ()
+  ; Base58PropTests.run ()
   ; Harness.run () )
 
 fun main () =

@@ -1,5 +1,6 @@
 package github.com/sjqtentacles/sml-base58
 
 require {
+  github.com/sjqtentacles/sml-check
   github.com/sjqtentacles/sml-codec
 }

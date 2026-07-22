@@ -1,5 +1,7 @@
 # sml-base58
 
+[![CI](https://github.com/sjqtentacles/sml-base58/actions/workflows/ci.yml/badge.svg)](https://github.com/sjqtentacles/sml-base58/actions/workflows/ci.yml)
+
 Base58 and Base58Check in pure Standard ML — the Bitcoin alphabet, with a
 double-SHA256 checksum supplied by the vendored
 [`sml-codec`](https://github.com/sjqtentacles/sml-codec). No FFI, no external
